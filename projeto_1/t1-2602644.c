@@ -9,7 +9,13 @@
 /*============================================================================*/
 /* Funcoes do trabalho. */
 
-int calculaInterseccao (int n_retangulos);
-unsigned int encontraParMaisProximo (int n_retangulos);
+int calculaInterseccao (int n_retangulos)
+{
+    return 0;
+}
+unsigned int encontraParMaisProximo (int n_retangulos)
+{
+    return 0;
+}
 
 /*============================================================================*/
