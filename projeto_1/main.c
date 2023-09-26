@@ -14,13 +14,13 @@
 /*============================================================================*/
 /* Selecione aqui quais fun��es devem ser testadas. */
 
-#define TESTA_INTERSECCAO 0
+#define TESTA_INTERSECCAO 1
 #define TESTA_PAR_MAIS_PROXIMO 0
 
 /*----------------------------------------------------------------------------*/
 /* Configura��o dos testes. Coloque o nome de um dos arquivos txt. */
 
-#define ARQUIVO_RETANGULOS "teste_retangulos1.txt" /* Arquivo contendo dados para teste. */
+#define ARQUIVO_RETANGULOS "teste_retangulos3.txt" /* Arquivo contendo dados para teste. */
 
 /*============================================================================*/
 

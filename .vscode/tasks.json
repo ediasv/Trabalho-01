@@ -7,7 +7,8 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}/projeto_1/*.c",
+                "${workspaceFolder}/projeto_1/*.h",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
