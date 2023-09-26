@@ -5,9 +5,19 @@
 /*============================================================================*/
 
 #include "trabalho1.h"
+#include <stdio.h>
 
 /*============================================================================*/
 /* Funções do trabalho. */
+
+int calculaInterseccao (int n_retangulos);
+unsigned int encontraParMaisProximo (int n_retangulos);
+
+/*============================================================================*/
+/* Funções auxiliares. */
+
+
+/*============================================================================*/
 
 int calculaInterseccao (int n_retangulos)
 {

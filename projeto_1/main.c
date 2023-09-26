@@ -20,7 +20,7 @@
 /*----------------------------------------------------------------------------*/
 /* Configura��o dos testes. Coloque o nome de um dos arquivos txt. */
 
-#define ARQUIVO_RETANGULOS "teste_retangulos3.txt" /* Arquivo contendo dados para teste. */
+#define ARQUIVO_RETANGULOS "teste_retangulos2.txt" /* Arquivo contendo dados para teste. */
 
 /*============================================================================*/
 
