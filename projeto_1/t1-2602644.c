@@ -38,15 +38,14 @@ int calculaInterseccao (int n_retangulos)
         ret2XID = pegaXID(i);
         ret2YID = pegaYID(i);
 
-        // Descobrir se NÃO tem intersecção.
+        // Descobrir se NÃO tem intersecção. Caso não tenha, encerra o loop e a área permanece 0.
         if (ret1XSE >= ret2XID || ret2XSE >= ret1XID || ret1YID >= ret2YSE || ret2YID >= ret1YSE)
         {
             tem_inters = 0;
             break;
         }
 
-        // Caso tenha intersecção, "montar" o retângulo da intersecção.
-
+        // "Montar" o retângulo da intersecção:
         // O retângulo da inters. recebe o maior X dos vértices superiores esquerdos,...
         if (ret1XSE < ret2XSE)
             ret1XSE = ret2XSE;
@@ -64,7 +63,7 @@ int calculaInterseccao (int n_retangulos)
             ret1YID = ret2YID;
     }
 
-    // Se tiver intersecção, calcular a área.
+    // Calcular a área se tiver intersecção.
     if (tem_inters)
         area = (ret1XID - ret1XSE) * (ret1YSE - ret1YID);
     
