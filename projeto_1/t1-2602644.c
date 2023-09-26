@@ -62,12 +62,6 @@ int calculaInterseccao (int n_retangulos)
         // E o maior Y dos vértices inferiores direitos.
         if (ret1YID < ret2YID)
             ret1YID = ret2YID;
-
-        /*if (ret1XSE<=ret1XID || ret1YSE <= ret1YID)
-        {
-            tem_inters=0;
-            break;
-        }*/
     }
 
     // Se tiver intersecção, calcular a área.
@@ -77,6 +71,7 @@ int calculaInterseccao (int n_retangulos)
     // Retorna a área de intersecção.
     return area;
 }
+
 unsigned int encontraParMaisProximo (int n_retangulos)
 {
     return 0;
