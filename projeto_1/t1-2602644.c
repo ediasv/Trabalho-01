@@ -8,9 +8,6 @@
 #include<stdio.h>
 #include<math.h>
 
-// 2^(16)
-#define DOIS_A_DEZESSEIS 65536
-
 /*============================================================================*/
 /* Funções do trabalho. */
 
@@ -18,23 +15,19 @@ int calculaInterseccao (int n_retangulos);
 unsigned int encontraParMaisProximo (int n_retangulos);
 
 /*============================================================================*/
-/* Funções auxiliares. */
-
-
-/*============================================================================*/
 
 int calculaInterseccao (int n_retangulos)
 {
     int i;
 
-    // Quatro pares de coordenadas, referentes aos vértices de dois retângulos.
+    // Coordenadas dos vértices.
     int ret1XSE, ret1YSE, ret1XID, ret1YID, ret2XSE, ret2YSE, ret2XID, ret2YID;
 
     // Área de intersecção e flag para saber se há intersecção entre os retângulos.
     int area, tem_inters;
 
-    // Coordenadas do "retângulo definitivo". Se houver intersecção, as coordenadas do 
-    // retângulo da intersecção serão armazenadas nestas variáveis.
+    /* Coordenadas do "retângulo definitivo". Se houver intersecção, as coordenadas do 
+       retângulo de intersecção serão armazenadas nestas variáveis. */
     ret1XSE = pegaXSE(0);
     ret1YSE = pegaYSE(0);
     ret1XID = pegaXID(0);
@@ -81,7 +74,6 @@ int calculaInterseccao (int n_retangulos)
     if (tem_inters)
         area = (ret1XID - ret1XSE) * (ret1YSE - ret1YID);
     
-    // Retorna a área de intersecção.
     return area;
 }
 
@@ -89,7 +81,7 @@ unsigned int encontraParMaisProximo (int n_retangulos)
 {
     int i, j;
 
-    // Quatro pares de coordenadas, referentes aos vértices de dois retângulos.
+    // Coordenadas dos vértices dos retângulos.
     int ret1XSE, ret1YSE, ret1XID, ret1YID, ret2XSE, ret2YSE, ret2XID, ret2YID;
 
 
