@@ -10,7 +10,8 @@
                 "${workspaceFolder}/projeto_1/*.c",
                 "${workspaceFolder}/projeto_1/*.h",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lm"
             ],
             "options": {
                 "cwd": "${fileDirname}"
