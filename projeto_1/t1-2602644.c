@@ -47,10 +47,7 @@ int calculaInterseccao (int n_retangulos)
 
         // Descobrir se NÃO tem intersecção. Caso não tenha, encerra o loop e a área permanece 0.
         if (ret1XSE >= ret2XID || ret2XSE >= ret1XID || ret1YID >= ret2YSE || ret2YID >= ret1YSE)
-        {
-            tem_inters = 0;
-            break;
-        }
+            return 0;
 
         // "Montar" o retângulo da intersecção:
         // O retângulo da inters. recebe o maior X dos vértices superiores esquerdos,...
@@ -70,9 +67,8 @@ int calculaInterseccao (int n_retangulos)
             ret1YID = ret2YID;
     }
 
-    // Calcular a área se tiver intersecção.
-    if (tem_inters)
-        area = (ret1XID - ret1XSE) * (ret1YSE - ret1YID);
+    // Calcular a área
+    area = (ret1XID - ret1XSE) * (ret1YSE - ret1YID);
     
     return area;
 }
@@ -130,12 +126,10 @@ unsigned int encontraParMaisProximo (int n_retangulos)
             {
                 // Se a distancia entre os retangulos for zero, não precisa comparar nenhuma outra distância.
                 if (dist == 0)
-                {
-                    menor_dist = dist;
-                    id1 = i;
-                    id2 = j;
-                    j = n_retangulos;
-                    i = n_retangulos;
+                {   
+                    // Combinação dos índices dos retângulos
+                    combina_id = (i << 16) + j;
+                    return combina_id;
                 }
 
                 // Se a distância calculada for menor que menor_dist, atualiza a variável da menor distancia e dos

@@ -14,7 +14,7 @@
 /*============================================================================*/
 /* Selecione aqui quais fun��es devem ser testadas. */
 
-#define TESTA_INTERSECCAO 1
+#define TESTA_INTERSECCAO 0
 #define TESTA_PAR_MAIS_PROXIMO 1
 
 /*----------------------------------------------------------------------------*/
