@@ -91,7 +91,17 @@ unsigned int encontraParMaisProximo (int n_retangulos)
 
     // Valor que vai ser retornado pela função e índices de retangulos
     unsigned int combina_id, id1, id2;
+    
 
+    // Primeiro caso é diferente, pois a menor_dist recebe a primeira distância
+    ponto1X = (pegaXID(0) + pegaXSE(0))/2.0;
+    ponto1Y = (pegaYSE(0) + pegaYID(0))/2.0;
+    ponto2X = (pegaXID(1) + pegaXSE(1))/2.0; 
+    ponto2Y = (pegaYSE(1) + pegaYID(1))/2.0;
+    menor_dist = sqrt((ponto1X - ponto2X)*(ponto1X - ponto2X) + (ponto1Y - ponto2Y)*(ponto1Y - ponto2Y));
+    id1 = 0;
+    id2 = 1;
+    
 
     // Para toda combinação de dois pontos, calcular a distância.
     for (i=0 ; i<n_retangulos ; i++)
@@ -99,7 +109,6 @@ unsigned int encontraParMaisProximo (int n_retangulos)
         // Centro do retangulo i.
         ponto1X = (pegaXID(i) + pegaXSE(i))/2.0;
         ponto1Y = (pegaYSE(i) + pegaYID(i))/2.0;
-
 
         // Calcula a distância entre o ponto i e os outros centros de retângulos.
         for (j=i+1 ; j<n_retangulos ; j++)
@@ -113,33 +122,21 @@ unsigned int encontraParMaisProximo (int n_retangulos)
             dist = sqrt((ponto1X - ponto2X)*(ponto1X - ponto2X) + (ponto1Y - ponto2Y)*(ponto1Y - ponto2Y));
 
 
-            // A primeira distância calculada "é a menor".
-            if (i == 0 && j == 1)
+            // Se a distancia entre os retangulos for zero, não precisa comparar nenhuma outra distância.
+            if (dist == 0)
+            {   
+                // Combinação dos índices dos retângulos
+                combina_id = (i << 16) + j;
+                return combina_id;
+            }
+
+            // Se a distância calculada for menor que menor_dist, atualiza a variável da menor distancia e dos
+            // índices dos retangulos
+            else if (dist < menor_dist)
             {
                 menor_dist = dist;
-
-                // Armazenar os índices dos retângulos com menor distância
                 id1 = i;
                 id2 = j;
-            }
-            else
-            {
-                // Se a distancia entre os retangulos for zero, não precisa comparar nenhuma outra distância.
-                if (dist == 0)
-                {   
-                    // Combinação dos índices dos retângulos
-                    combina_id = (i << 16) + j;
-                    return combina_id;
-                }
-
-                // Se a distância calculada for menor que menor_dist, atualiza a variável da menor distancia e dos
-                // índices dos retangulos
-                else if (dist < menor_dist)
-                {
-                    menor_dist = dist;
-                    id1 = i;
-                    id2 = j;
-                }
             }
         }
     }
